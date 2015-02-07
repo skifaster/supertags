@@ -16,6 +16,10 @@ Package.onUse(function(api) {
 		"lib/supertags.activate.js"
 		]);
 
+  api.addFiles([
+    "lib/classes/collection.supertags.js"
+    ]);
+
 	api.addFiles([  
 		"lib/collections/mentions.collections.js",
 		"lib/collections/hashtags.collections.js"
