@@ -101,16 +101,16 @@ var parsedTags = superTags.parseAllTags("this is my #sample text");
 {originalText: "this is my #sample text", modifiedText: "this is my #sample text", hashtag: ["sample"]}
 ```
 
-```js
-
 * parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
-* applyAllTags (object)
 
+```js
 var parsedObj = superTags.parseAllTagsFromObject({text: "this is my #sample text"}, "text");
 
 //Output for parsedObj
 {originalObj: {text: "this is my #sample text"}, modifiedObject: {text: "this is my #sample text"}, hashtag: ["sample"]}
 ```
+
+* applyAllTags (object)
 
 In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with. 
 
