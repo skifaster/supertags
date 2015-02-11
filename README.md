@@ -96,6 +96,8 @@ The returned ``superTags`` object will have the following methods:
 * parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
 * applyAllTags (object, fieldName) //fieldName is optional if parseField is provided in settings
 
+In general, parsing tags from a string or object will both return and store the tags in the specific instance of SuperTags. Once the tags are applied (e.g. applyAllTags), the tags are cleared from the instance.
+
 Examples: 
 
 ```js
