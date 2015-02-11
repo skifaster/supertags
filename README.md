@@ -216,6 +216,7 @@ Autocomplete can be enabled on a textbox or a textarea. See the Autocomplete Set
 Textbox Example:
 
 ```html
+//the template name must match the ``inputTemplate`` property in the settings provided
 <template name="templateName">
   //settings are provide back to the template by SuperTags 
   {{> inputAutocomplete settings=settings id="anyId" class="anyClasses"}}
@@ -225,8 +226,11 @@ Textbox Example:
 Textarea Example: 
 
 ```html
-//settings are provide back to the template by SuperTags 
-{{#textareaAutocomplete settings=settings id="anyId"}}{{/textareaAutocomplete}}
+//the template name must match the ``inputTemplate`` property in the settings provided
+<template name="templateName">
+  //settings are provide back to the template by SuperTags 
+  {{#textareaAutocomplete settings=settings id="anyId"}}{{/textareaAutocomplete}}
+</template>
 ```
 
 The full documentation can be found at [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete)
