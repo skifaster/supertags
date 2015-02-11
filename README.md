@@ -182,7 +182,26 @@ superTags.hashtag.mongoController.removeTagFromDoc(docId, ["tag1", "tag2", "tag3
 
 ## Events
 
-To document ...
+SuperTags is built with ClassX and thus has a full event system built in. This is useful if something should happen anytime something is tagged or a tag is removed from an item. 
+
+To subscribe to events within Supertags: 
+
+```js
+SuperTags.addEventListener("tag", function(data) {
+
+})
+```
+
+The data parameter has the following properties and possible values: 
+
+```
+data: {
+  callee: controller, mongoController
+  action: tagAdded, tagRemoved, newTagParsed, newTagSaved
+  label: //the label responsible for triggering (e.g. hashtag, mention)
+  tags: //tags that were added, remove, parsed or saved
+}
+```
 
 ## Template Helpers
 
