@@ -171,15 +171,13 @@ In both addTagToDoc and removeTagFromDoc, either a single tag (string) can be pa
 Examples:
 
 ```js
-superTags.hashtag.mongoController.addTagToDoc(docId, ["tag1", "tag2", "tag3"])
-
 //a field called 'hashtag' will be added to the MongoDB document containing an array of tags
+superTags.hashtag.mongoController.addTagToDoc(docId, ["tag1", "tag2", "tag3"])
 ```
 
 ```js
-superTags.hashtag.mongoController.removeTagFromDoc(docId, ["tag1", "tag2", "tag3"])
-
 //a field called 'hashtag' will be modified and the strings will be removed from the array
+superTags.hashtag.mongoController.removeTagFromDoc(docId, ["tag1", "tag2", "tag3"])
 ```
 
 ## Events
