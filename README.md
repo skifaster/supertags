@@ -90,7 +90,7 @@ To use SuperTags, call the ```Activate`` function with the appropriate settings:
 superTags = new SuperTags.Activate(settings);
 ```
 
-The returned ```superTags`` object will have the following methods: 
+The returned ``superTags`` object will have the following methods: 
 
 * parseAllTags
 * parseAllTagsFromObject
@@ -110,6 +110,18 @@ Each tag controller has two main functions:
 * tagItem(item, additionalTags)
 
 The tagItem function must be called after the parseTags function, as the tags are provided by the parse function.
+
+```js
+var tags = superTags.hashtag.parseTags("this is my #sample text");
+var taggedObject = superTags.hashtag.tagItem({sample: "item"});
+
+//Output for tags
+{modifiedText: "this is my #sample text", hashtag: ["#sample"]}
+
+//Output for taggedObject
+{sample: item, hashtag: ["#sample"]}
+
+```
 
 ### Parsing Tags
 
