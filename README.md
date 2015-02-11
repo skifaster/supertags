@@ -168,7 +168,7 @@ Mongo controllers have the following functions:
 * addTagToDoc (docId, docTag, callback)
 * removeTagFromDoc(docId, docTag, callback);
 
-In both addTagToDoc and removeTagFromDoc, either a single tag (string) can be passed or an array of tags ([strings]) can be passed in. 
+In both addTagToDoc and removeTagFromDoc, either a single tag (string) or an array of tags ([strings]) can be passed in. 
 
 Examples:
 
