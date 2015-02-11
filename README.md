@@ -93,8 +93,8 @@ superTags = new SuperTags.Activate(settings);
 The returned ``superTags`` object will have the following methods: 
 
 * parseAllTags (text) //runs parse tags across all tag controllers
-* parseAllTagsFromObject
-* applyAllTags
+* parseAllTagsFromObject (object)
+* applyAllTags (object)
 
 In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with. 
 
@@ -139,6 +139,10 @@ Mongo controllers have the following functions:
 * removeTagFromDoc(docId, docTag);
 
 In both addTagToDoc and removeTagFromDoc, either a single tag (string) can be passed or an array of tags ([strings]) can be passed in. 
+
+## Events
+
+To document ...
 
 ## Bonus
 
