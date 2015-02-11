@@ -93,15 +93,31 @@ superTags = new SuperTags.Activate(settings);
 The returned ``superTags`` object will have the following methods: 
 
 * parseAllTags (text) //runs parse tags across all tag controllers
-* parseAllTagsFromObject (object)
+* parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
 * applyAllTags (object)
+
+parseAllTags Example: 
+
+```js
+var parsedTags = superTags.parseAllTags("this is my #sample text");
+
+//Output for parsedTags
+{originalText: "this is my #sample text", modifiedText: "this is my #sample text", hashtag: ["sample"]}
+```
+
+```js
+var parsedObj = superTags.parseAllTagsFromObject({text: "this is my #sample text"}, "text");
+
+//Output for parsedObj
+{originalObj: {text: "this is my #sample text"}, modifiedObject: {text: "this is my #sample text"}, hashtag: ["sample"]}
+```
 
 In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with. 
 
 Example (assuming ```hashtag``` was the label passed in from settings):
 
 ```js
-supertags.hashtags
+supertags.hashtag
 ```
 
 ### Tag Controllers
