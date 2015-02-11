@@ -92,7 +92,7 @@ superTags = new SuperTags.Activate(settings);
 
 The returned ``superTags`` object will have the following methods: 
 
-* parseAllTags
+* parseAllTags (text) //runs parse tags across all tag controllers
 * parseAllTagsFromObject
 * applyAllTags
 
@@ -104,10 +104,12 @@ Example (assuming ```hashtag``` was the label passed in from settings):
 supertags.hashtags
 ```
 
+### Tag Controllers
+
 Each tag controller has two main functions:
 
-* parseTags(text, options)
-* tagItem(item, additionalTags)
+* parseTags (text, options)
+* tagItem (item, additionalTags)
 
 The tagItem function must be called after the parseTags function, as the tags are provided by the parse function.
 
@@ -116,16 +118,41 @@ var tags = superTags.hashtag.parseTags("this is my #sample text");
 var taggedObject = superTags.hashtag.tagItem({sample: "item"});
 
 //Output for tags
-{modifiedText: "this is my #sample text", hashtag: ["#sample"]}
+{originalText: "this is my #sample text", modifiedText: "this is my #sample text", hashtag: ["#sample"]}
 
 //Output for taggedObject
-{sample: item, hashtag: ["#sample"]}
+{sample: "item", hashtag: ["#sample"]}
 
 ```
 
-### Parsing Tags
+### Tag Mongo Controller
 
-The simplest operation that can be preformed is tag parsing. This function accepts text and returns an object with the tags found. If no token is provided in settings, all text will be considered a tag.
+Each tag controller also has a mongo controller available to it. This allows for each tag management of documents already stored within MongoDB.
+
+```js
+superTags.hashtag.mongoController
+```
+
+Mongo controllers have the following functions:
+
+* addTagToDoc (docId, docTag)
+* removeTagFromDoc(docId, docTag);
+
+In both addTagToDoc and removeTagFromDoc, either a single tag (string) can be passed or an array of tags ([strings]) can be passed in. 
+
+## Bonus
+
+### Handling spaces in tags
+
+Typically tags do not support spaces, but this makes things like mentions a little tricky. SuperTags allows the use of spaces provided the appropriate syntax. 
+
+```js
+  var spacedTags = "This is a #sample provided by @[Carsten Winsnes]"
+```
+
+In the example above '@Carsten Winsnes' will now be available as a tag.
+
+Note: If autocomplete is enabled, it will tag items with existing tags automatically, no special syntax is needed. New tags still need to use the syntax above, until they are stored in the autocomplete collection.
 
 ## License
 
