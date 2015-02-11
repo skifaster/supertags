@@ -48,7 +48,7 @@ var tokenizedSettings = {
 
 ### Autocomplete Settings
 
-Most tag libraries to date have autocomplete built in, SuperTags utlizes [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete) to allow this functionality. To use autocomplete with SuperTags, use the following settings:
+Most tag libraries have autocomplete built in, SuperTags utlizes [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete) to allow this functionality. To use autocomplete with SuperTags, use the following settings:
 
 ```js
 var settings = {
@@ -143,6 +143,14 @@ In both addTagToDoc and removeTagFromDoc, either a single tag (string) can be pa
 ## Events
 
 To document ...
+
+## Template Helpers
+
+### Autocomplete
+
+### Tag Highlighting
+
+### Object Tags 
 
 ## Bonus
 
