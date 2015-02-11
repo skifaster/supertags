@@ -94,7 +94,7 @@ The returned ``superTags`` object will have the following methods:
 
 * parseAllTags (text) //runs parse tags across all tag controllers
 * parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
-* applyAllTags (object)
+* applyAllTags (object, fieldName) //fieldName is optional if parseField is provided in settings
 
 Examples: 
 
@@ -110,6 +110,13 @@ var parsedObj = superTags.parseAllTagsFromObject({text: "this is my #sample text
 
 //Output for parsedObj
 {originalObj: {text: "this is my #sample text"}, modifiedObject: {text: "this is my #sample text"}, hashtag: ["sample"]}
+```
+
+```js
+var applyAllTags = superTags.applyAllTags({text: "this is my #sample text"}, "text")
+
+//Output for applyAllTags
+{text: "this is my #sample text", hashtag: ["sample"]}
 ```
 
 In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with. 
