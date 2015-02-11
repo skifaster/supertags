@@ -211,15 +211,23 @@ SuperTags utilizes the mizzao:autocomplete template helpers and also provides so
 
 ### Autocomplete
 
-Autocomplete can be enabled on a textbox or a textarea. 
+Autocomplete can be enabled on a textbox or a textarea. See the Autocomplete Settings section above for all the mandatory settings required.
 
 Textbox Example:
 
-```html 
+```html
+<template name="templateName">
+  //settings are provide back to the template by SuperTags 
   {{> inputAutocomplete settings=settings id="anyId" class="anyClasses"}}
+</template>
 ```
 
+Textarea Example: 
 
+```html
+//settings are provide back to the template by SuperTags 
+{{#textareaAutocomplete settings=settings id="anyId"}}{{/textareaAutocomplete}}
+```
 
 The full documentation can be found at [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete)
 
