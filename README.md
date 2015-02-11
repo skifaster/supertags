@@ -163,10 +163,24 @@ superTags.hashtag.mongoController
 
 Mongo controllers have the following functions:
 
-* addTagToDoc (docId, docTag)
-* removeTagFromDoc(docId, docTag);
+* addTagToDoc (docId, docTag, callback)
+* removeTagFromDoc(docId, docTag, callback);
 
 In both addTagToDoc and removeTagFromDoc, either a single tag (string) can be passed or an array of tags ([strings]) can be passed in. 
+
+Examples:
+
+```js
+superTags.hashtag.mongoController.addTagToDoc(docId, ["tag1", "tag2", "tag3"])
+
+//a field called 'hashtag' will be added to the MongoDB document containing an array of tags
+```
+
+```js
+superTags.hashtag.mongoController.removeTagFromDoc(docId, ["tag1", "tag2", "tag3"])
+
+//a field called 'hashtag' will be modified and the strings will be removed from the array
+```
 
 ## Events
 
