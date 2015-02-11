@@ -82,6 +82,37 @@ var settings = {
 
 ## Usage
 
+To use SuperTags, call the ```Activate`` function with the appropriate settings:
+
+```js
+superTags = new SuperTags.Activate(settings);
+```
+
+The returned ```superTags`` object will have the following methods: 
+
+* parseAllTags
+* parseAllTagsFromObject
+* applyAllTags
+
+In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with. 
+
+Example (assuming ```hashtag``` was the label passed in from settings):
+
+```js
+supertags.hashtags
+```
+
+Each tag controller has two main functions:
+
+* parseTags(text, options)
+* tagItem(item, additionalTags)
+
+The tagItem function must be called after the parseTags function, as the tags are provided by the parse function.
+
+### Parsing Tags
+
+The simplest operation that can be preformed is tag parsing. This function accepts text and returns an object with the tags found. If no token is provided in settings, all text will be considered a tag.
+
 ## License
 
 [MIT](http://choosealicense.com/licenses/mit/) -
