@@ -146,10 +146,10 @@ var tags = superTags.hashtag.parseTags("this is my #sample text");
 var taggedObject = superTags.hashtag.tagItem({sample: "item"});
 
 //Output for tags
-{originalText: "this is my #sample text", modifiedText: "this is my #sample text", hashtag: ["#sample"]}
+{originalText: "this is my #sample text", modifiedText: "this is my #sample text", hashtag: ["sample"]}
 
 //Output for taggedObject
-{sample: "item", hashtag: ["#sample"]}
+{sample: "item", hashtag: ["sample"]}
 
 ```
 
