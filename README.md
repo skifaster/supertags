@@ -138,6 +138,8 @@ Each tag controller has two main functions:
 
 The tagItem function must be called after the parseTags function, as the tags are provided by the parse function.
 
+Example:
+
 ```js
 //parses and stores the 'sample' hashtag on the instance 'superTags'
 var tags = superTags.hashtag.parseTags("this is my #sample text");
