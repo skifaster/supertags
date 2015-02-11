@@ -150,7 +150,7 @@ Typically tags do not support spaces, but this makes things like mentions a litt
   var spacedTags = "This is a #sample provided by @[Carsten Winsnes]"
 ```
 
-In the example above '@Carsten Winsnes' will now be available as a tag.
+In the example above 'Carsten Winsnes' will now be available as a tag.
 
 Note: If autocomplete is enabled, it will tag items with existing tags automatically, no special syntax is needed. New tags still need to use the syntax above, until they are stored in the autocomplete collection.
 
