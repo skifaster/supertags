@@ -207,7 +207,21 @@ data: {
 
 ## Template Helpers
 
+SuperTags utilizes the mizzao:autocomplete template helpers and also provides some additional helpers to make it easier to deal with tags.
+
 ### Autocomplete
+
+Autocomplete can be enabled on a textbox or a textarea. 
+
+Textbox Example:
+
+```html 
+  {{> inputAutocomplete settings=settings id="anyId" class="anyClasses"}}
+```
+
+
+
+The full documentation can be found at [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete)
 
 ### Tag Highlighting
 
