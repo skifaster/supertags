@@ -50,6 +50,7 @@ var tokenizedSettings = {
 
 Most tag libraries to date have autocomplete built in, SuperTags utlizes [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete) to allow this functionality. To use autocomplete with SuperTags, use the following settings:
 
+```js
 var settings = {
   inputTemplate: "templateName",  //the name of the template that will be interacted with (e.g typed in)
   availableTags: [{
@@ -62,6 +63,7 @@ var settings = {
     ]
   }]
 }
+```
 
 ### Auto Save Settings
 
