@@ -93,10 +93,6 @@ superTags = new SuperTags.Activate(settings);
 The returned ``superTags`` object will have the following methods: 
 
 * parseAllTags (text) //runs parse tags across all tag controllers
-* parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
-* applyAllTags (object)
-
-parseAllTags Example: 
 
 ```js
 var parsedTags = superTags.parseAllTags("this is my #sample text");
@@ -106,6 +102,10 @@ var parsedTags = superTags.parseAllTags("this is my #sample text");
 ```
 
 ```js
+
+* parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
+* applyAllTags (object)
+
 var parsedObj = superTags.parseAllTagsFromObject({text: "this is my #sample text"}, "text");
 
 //Output for parsedObj
