@@ -237,7 +237,28 @@ The full documentation can be found at [mizzao:autocomplete](https://atmospherej
 
 ### Tag Highlighting
 
+SuperTags also makes it easy to highlight tags with a specific color.
+
+Example:
+
+```html
+<template name="templateName">
+  {{{supertagslinktext text}}}
+</template>
+```
+
 ### Object Tags 
+
+In some cases, it is helpful to append all the tags for an object inside the DOM. SuperTags makes this easy with a convienent helper.
+
+Example:
+
+```html
+<template name="templateName">
+  <div class='taggedItem' {{supertagsdata}} >
+  </div>
+</template>
+```
 
 ## Bonus
 
@@ -252,6 +273,10 @@ Typically tags do not support spaces, but this makes things like mentions a litt
 In the example above 'Carsten Winsnes' will now be available as a tag.
 
 Note: If autocomplete is enabled, it will tag items with existing tags automatically, no special syntax is needed. New tags still need to use the syntax above, until they are stored in the autocomplete collection.
+
+## TODO
+
+* Make the controller and mongoController place nicer together
 
 ## License
 
