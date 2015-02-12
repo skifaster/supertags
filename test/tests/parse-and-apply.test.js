@@ -8,6 +8,7 @@ if(!url) {
 describe("Parse and tag objects", function() {
 	before(function() {
 		casper.start(url);
+    console.log(url)
 		casper.on("remote.message", function(message) {
 			this.echo(message);
 		})
