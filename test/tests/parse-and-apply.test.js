@@ -1,6 +1,9 @@
 var env = require('system').env;
 var url = env.ROOT_URL;
-url = "http://localhost:3000/";
+
+if(!url) {
+  url = "http://localhost:3000"
+}
 
 describe("Parse and tag objects", function() {
 	before(function() {
