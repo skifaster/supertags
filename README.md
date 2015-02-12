@@ -237,7 +237,7 @@ The full documentation can be found at [mizzao:autocomplete](https://atmospherej
 
 ### Tag Highlighting
 
-SuperTags also makes it easy to highlight tags with a specific color.
+SuperTags also makes it easy to highlight tags with a specific color. The object must have tags added by SuperTags to be highlighted. The text is not parsed directly, the tags are replaced with highlighted spans.
 
 Example:
 
