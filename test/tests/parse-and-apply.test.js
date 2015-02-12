@@ -76,5 +76,26 @@ describe("Parse and tag objects", function() {
       evalResults.text.should.equal("this is my #sample text");
       evalResults.hashtags[0].should.equal("sample");
     })
+  });
+  it("should properly parse tags from tag controller - parseTags", function() {
+    casper.then(function() {
+      var evalResults = casper.evaluate(function() {
+        var tags = superTags.hashtags.parseTags("this is my #sample text");
+        return tags;
+      });
+      evalResults.modifiedText.should.equal("this is my #sample text");
+      evalResults.originalText.should.equal("this is my #sample text");
+      evalResults.tags[0].should.equal("sample");
+    })
+  });
+  it("should properly apply tags to object - tagItem", function() {
+    casper.then(function() {
+      var evalResults = casper.evaluate(function() {
+        var taggedObject = superTags.hashtags.tagItem({sample: "item"});
+        return taggedObject;
+      });
+      evalResults.hashtags[0].should.equal("sample");
+      evalResults.sample.should.equal("item");
+    })
   })
 })

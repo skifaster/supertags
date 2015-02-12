@@ -45,4 +45,16 @@ describe("Create and use mongo controllers", function() {
       evalResults.hasTagMongoController.should.equal(true);
     })
   });
+  it("should have base functions", function() {
+    casper.then(function() {
+      var evalResults = casper.evaluate(function() {
+        var a = superTags.hashtags.mongoController.addTagToDoc;
+        var b = superTags.hashtags.mongoController.removeTagFromDoc;
+        return {
+          hasTagMongoControllerFunctions: (a != null && b != null)
+        }
+      });
+      evalResults.hasTagMongoControllerFunctions.should.equal(true)
+    })
+  })
 });
