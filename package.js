@@ -1,7 +1,7 @@
 Package.describe({
 	"name": "arsnebula:supertags",
 	"summary": "Simple tagging package for both javascript objects and mongo documents.",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"git": "https://github.com/arsnebula/supertags.git"
 });
 
