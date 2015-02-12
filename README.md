@@ -1,4 +1,4 @@
-# SuperTags for Meteor
+# SuperTags for Meteor [![Build Status](https://api.shippable.com/projects/54dc4e2c5ab6cc13528bacdb/badge?branchName=master)](https://app.shippable.com/projects/54dc4e2c5ab6cc13528bacdb/builds/latest)
 
 Simple tagging package for both javascript objects and mongo documents.
 
@@ -90,7 +90,7 @@ To use SuperTags, call the ``Activate`` function with the appropriate settings:
 superTags = new SuperTags.Activate(settings);
 ```
 
-The returned ``superTags`` object will have the following methods: 
+The returned ``superTags`` variable will have the following methods: 
 
 * parseAllTags (text) //runs parse tags across all tag controllers
 * parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
