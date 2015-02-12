@@ -111,7 +111,7 @@ var parsedTags = superTags.parseAllTags("this is my #sample text");
 var parsedObj = superTags.parseAllTagsFromObject({text: "this is my #sample text"}, "text");
 
 //Output for parsedObj
-{originalObj: {text: "this is my #sample text"}, modifiedObject: {text: "this is my #sample text"}, hashtag: ["sample"]}
+{originalObj: {text: "this is my #sample text"}, modifiedObj: {text: "this is my #sample text"}, hashtag: ["sample"]}
 ```
 
 ```js
@@ -243,20 +243,24 @@ Example:
 
 ```html
 <template name="templateName">
-  {{{supertagslinktext text}}}
+  {{#each taggedItems}}
+    {{{supertagslinktext text}}}
+  {{/each}}
 </template>
 ```
 
-### Object Tags 
+### DOM Tags 
 
-In some cases, it is helpful to append all the tags for an object inside the DOM. SuperTags makes this easy with a convienent helper.
+In some cases, it is helpful to add all the tags for an object to the DOM. SuperTags makes this easy with a convenient helper.
 
 Example:
 
 ```html
 <template name="templateName">
-  <div class='taggedItem' {{supertagsdata}} >
-  </div>
+  {{#each taggedItems}}
+    <div class='taggedItem' {{supertagsdata}} >
+    </div>
+  {{/each}}
 </template>
 ```
 The ``supertagsdata`` helper will provide an attribute for each tag label provided in the settings.
