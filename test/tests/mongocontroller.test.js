@@ -9,7 +9,6 @@ describe("Create and use mongo controllers", function() {
 	before(function() {
     casper.start(url);
     casper.on("remote.message", function(message) {
-      this.echo(message);
     })
   });
   it("should have a global namespace and base classes", function() {
