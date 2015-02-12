@@ -259,6 +259,18 @@ Example:
   </div>
 </template>
 ```
+The ``supertagsdata`` helper will provide an attribute for each tag label provided in the settings.
+
+Example of Results:
+
+```html
+<template name="templateName">
+  <div class='taggedItem' hashtag='#sample'>
+  </div>
+</template>
+```
+
+Each attribute value includes the original token for easy parsing. 
 
 ## Bonus
 
@@ -267,10 +279,10 @@ Example:
 Typically tags do not support spaces, but this makes things like mentions a little tricky. SuperTags allows the use of spaces provided the appropriate syntax. 
 
 ```js
-  var spacedTags = "This is a #sample provided by @[Carsten Winsnes]"
+  var spacedTags = "This is a #sample provided by @[Bob Smith]"
 ```
 
-In the example above 'Carsten Winsnes' will now be available as a tag.
+In the example above 'Bob Smith' will now be available as a tag.
 
 Note: If autocomplete is enabled, it will tag items with existing tags automatically, no special syntax is needed. New tags still need to use the syntax above, until they are stored in the autocomplete collection.
 
