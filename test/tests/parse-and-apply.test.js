@@ -12,7 +12,6 @@ describe("Parse and tag objects", function() {
 		})
 	});
 	it("should have a global namespace and base classes", function() {
-		casper.wait(5000);
 		casper.then(function() {
 			var evalResults = casper.evaluate(function() {
 				var x = SuperTags;
