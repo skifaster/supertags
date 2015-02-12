@@ -1,4 +1,4 @@
-# Supertags for Meteor
+# SuperTags for Meteor
 
 Simple tagging package for both javascript objects and mongo documents.
 
@@ -6,12 +6,12 @@ Simple tagging package for both javascript objects and mongo documents.
 
 SuperTags allows for easy tagging of in memory objects and mongo documents. Some of the features include:
 
-* Manage multiple tags/lables at once
+* Manage multiple tags/labels at once
 * Parsing 'tokenized' tags from any text field or object
 * Applying tags to an object in memory
 * Add/Remove tags from documents in MongoDB
 * Enable auto-complete for existing tags
-* Link/Hightlight tags within text
+* Link/Highlight tags within text
 
 ## Current Version
 **v0.1.0**
@@ -48,7 +48,7 @@ var tokenizedSettings = {
 
 ### Autocomplete Settings
 
-Most tag libraries have autocomplete built in, SuperTags utlizes [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete) to allow this functionality. To use autocomplete with SuperTags, use the following settings:
+Most tag libraries have autocomplete built in, SuperTags utilizes [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete) to allow this functionality. To use autocomplete with SuperTags, use the following settings:
 
 ```js
 var settings = {
@@ -186,7 +186,7 @@ superTags.hashtag.mongoController.removeTagFromDoc(docId, ["tag1", "tag2", "tag3
 
 SuperTags is built with ClassX and thus has a full event system built in. This is useful if something should happen anytime something is tagged or a tag is removed from an item. 
 
-To subscribe to events within Supertags: 
+To subscribe to events within SuperTags: 
 
 ```js
 SuperTags.addEventListener("tag", function(data) {
