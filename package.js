@@ -1,7 +1,7 @@
 Package.describe({
 	"name": "arsnebula:supertags",
-	"summary": "Tagging system for objects and MongoDB documents",
-	"version": "0.1.0",
+	"summary": "Simple tagging package for both javascript objects and mongo documents.",
+	"version": "0.1.1",
 	"git": "git@bitbucket.org:arsnebula/meteor-billing.git"
 });
 

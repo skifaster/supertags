@@ -14,7 +14,7 @@ SuperTags allows for easy tagging of in memory objects and mongo documents. Some
 * Link/Highlight tags within text
 
 ## Current Version
-**v0.1.0**
+**v0.1.1**
 
 ## Setup and Configuration
 
