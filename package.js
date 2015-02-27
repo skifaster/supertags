@@ -5,7 +5,7 @@ Package.describe({
 	"git": "https://github.com/arsnebula/supertags.git"
 });
 
-Package.onUse(function(api) { 
+Package.onUse(function(api) {
 	api.versionsFrom("1.0");
 	api.use("mizzao:autocomplete@0.4.10");
   api.use("arsnebula:reactive-varx@0.9.2");
@@ -18,6 +18,7 @@ Package.onUse(function(api) {
     "lib/js/supertags.controller.js",
     "lib/js/supertags.mongocontroller.js",
     "lib/js/supertags.helpers.js",
+    "lib/js/supertags.events.js",
 		"lib/js/supertags.activate.js",
 	]);
 
@@ -25,7 +26,7 @@ Package.onUse(function(api) {
     "lib/classes/collection.supertags.js"
   ]);
 
-	api.addFiles([  
+	api.addFiles([
 		"lib/collections/mentions.collections.js",
 		"lib/collections/hashtags.collections.js"
 	]);

@@ -1,0 +1,8 @@
+run: You're not in a Meteor project directory.
+
+To create a new Meteor project:
+  meteor create <project name>
+For example:
+  meteor create myapp
+
+For more help, see 'meteor --help'.
