@@ -13,6 +13,18 @@ Package.onUse(function(api) {
 	api.use("arsnebula:classx@2.0.5");
   api.use("templating");
 
+  api.addFiles([
+    "lib/classes/bower_components/rangy/rangy-core.min.js",
+    "lib/classes/bower_components/rangy/rangy-cssclassapplier.min.js",
+    "lib/classes/bower_components/rangy/rangy-selectionsaverestore.min.js",
+    // "lib/classes/bower_components/rangy/rangy-textrange.js"
+  ], ["client"])
+
+  api.addFiles([
+    "lib/external/taggle.js",
+    "lib/external/taggle.css"
+  ], ["client"])
+
 	api.addFiles([
 		"lib/js/supertags.namespace.js",
     "lib/js/supertags.controller.js",
