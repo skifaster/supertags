@@ -7,6 +7,7 @@ Package.describe({
 
 Package.onUse(function(api) {
 	api.versionsFrom("1.0");
+  api.use("dandv:caret-position@2.1.0-3", 'client');
 	api.use("mizzao:autocomplete@0.4.10");
   api.use("arsnebula:reactive-varx@0.9.2");
 
@@ -45,8 +46,11 @@ Package.onUse(function(api) {
 
   api.addFiles([
     "lib/templates/supertags.textfields.html",
-    "lib/templates/supertags.textfields.js"
+    "lib/templates/supertags.textfields.js",
+    "lib/templates/autocomplete/supertags.autocomplete.html",
+    "lib/templates/autocomplete/supertags.autocomplete.css"
   ], ["client"])
 
 	api.export("SuperTags");
+  api.export("ReactiveVar")
 })

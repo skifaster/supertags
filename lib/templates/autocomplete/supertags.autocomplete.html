@@ -1,0 +1,9 @@
+<template name="supertagsAutocompleteContainer">
+  {{#each filteredItems}}
+    {{> UI.dynamic template=../itemTemplate data=this}}
+  {{/each}}
+</template>
+
+<template name="supertagsAutocompleteItem">
+  <div class="supertags-ac-item">{{showFieldData this}}</div>
+</template>
