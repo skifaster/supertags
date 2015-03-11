@@ -53,7 +53,7 @@ SuperTags makes it easy to add additional CSS classes to each tag. This allows t
 var settings = {
   ...
   tagCss: {
-    additionalTagClasses: "class1 class2" //add each additional style as a space delimited string
+    additionalTagClasses: "class1 class2" //space delimited string of classes
   }
 }
 ```
