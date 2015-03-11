@@ -69,12 +69,12 @@ var settings = {
 }
 ```
 
-### Tokenized Tags
+### Tokenized Tags (Inline Mode)
 
-Hashtags and mentions are the most popular tokenized tags, but SuperTags allows for any number of tokenized tags.
+Hashtags and mentions are the most popular tokenized tags, but SuperTags allows for any number of tokenized tags. It is important to note that tokenized tags only work in `inline` mode.
 
 ```js
-var tokenizedSettings = {
+var settings = {
   availableTags: [{
     label: "hashtag",
     token: "#"          //token to denote a tag within text
