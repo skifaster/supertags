@@ -1,6 +1,6 @@
 # SuperTags for Meteor [![Build Status](https://api.shippable.com/projects/54dc4e2c5ab6cc13528bacdb/badge?branchName=master)](https://app.shippable.com/projects/54dc4e2c5ab6cc13528bacdb/builds/latest)
 
-Simple tagging package for both javascript objects and mongo documents.
+Tagging package for both javascript objects and mongo documents.
 
 ## About SuperTags
 
@@ -14,21 +14,27 @@ SuperTags allows for easy tagging of in memory objects and mongo documents. Some
 * Link/Highlight tags within text
 
 ## Current Version
-**v0.1.2**
+**v0.2.0**
 
 ## Setup and Configuration
 
-To use the SuperTags package, the ``Activate`` method must be called with a settings object. The basic settings of the SuperTags library are below:
+To use the SuperTags package, the ``Activate`` method (see Usage below) must be called with a settings object. The basic settings of the SuperTags library are below:
 
 ```js
 var settings {
-  parentObj: "tags",     //optional, allows for all tags to be under one object
-	availableTags: [{      //required, array of available tags
-    	label: "itemtags"  //required, label of the desired tag
-	}]
+  inputTemplate: "blazeTemplateName, //Blaze template to attach events and helpers
+  inputControl: "divIdForTagField" //Div Id for tag input
 }
 
 ```
+
+### Tag Modes
+
+SuperTags has two modes for entering tags:
+
+* Tag Box - Provides an input box for users to enter in one or more tags. This is the default mode and good for collecting tags on forms, etc. The user can only enter tags in this mode.
+
+* Inline - Similar to how twitter does has tags, users can intermix text and tags in this mode. Tags must be tokenized with a symbol (e.g. #).
 
 ### Tokenized Tags
 
@@ -80,7 +86,7 @@ var settings = {
     label: "hashtag"
   }]
 }
-``` 
+```
 
 ## Usage
 
@@ -90,7 +96,7 @@ To use SuperTags, call the ``Activate`` function with the appropriate settings:
 superTags = new SuperTags.Activate(settings);
 ```
 
-The returned ``superTags`` variable will have the following methods: 
+The returned ``superTags`` variable will have the following methods:
 
 * parseAllTags (text) //runs parse tags across all tag controllers
 * parseAllTagsFromObject (object, fieldName) //fieldName is optional if parseField is provided in settings
@@ -98,7 +104,7 @@ The returned ``superTags`` variable will have the following methods:
 
 In general, parsing tags from a string or object will both return and store the tags in the specific instance of SuperTags. Once the tags are applied (e.g. applyAllTags), the tags are cleared from the instance.
 
-Examples: 
+Examples:
 
 ```js
 var parsedTags = superTags.parseAllTags("this is my #sample text");
@@ -121,7 +127,7 @@ var applyAllTags = superTags.applyAllTags({text: "this is my #sample text"}, "te
 {text: "this is my #sample text", hashtag: ["sample"]}
 ```
 
-In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with. 
+In addition, each tag label is available off the ``supertags`` object as a tag controller, in the case only a single group of tags needs to be interacted with.
 
 Example (assuming ```hashtag``` was the label passed in from settings):
 
@@ -168,7 +174,7 @@ Mongo controllers have the following functions:
 * addTagToDoc (docId, docTag, callback)
 * removeTagFromDoc(docId, docTag, callback);
 
-In both addTagToDoc and removeTagFromDoc, either a single tag (string) or an array of tags ([strings]) can be passed in. 
+In both addTagToDoc and removeTagFromDoc, either a single tag (string) or an array of tags ([strings]) can be passed in.
 
 Examples:
 
@@ -184,9 +190,9 @@ superTags.hashtag.mongoController.removeTagFromDoc(docId, ["tag1", "tag2", "tag3
 
 ## Events
 
-SuperTags is built with ClassX and thus has a full event system built in. This is useful if something should happen anytime something is tagged or a tag is removed from an item. 
+SuperTags is built with ClassX and thus has a full event system built in. This is useful if something should happen anytime something is tagged or a tag is removed from an item.
 
-To subscribe to events within SuperTags: 
+To subscribe to events within SuperTags:
 
 ```js
 SuperTags.addEventListener("tag", function(data) {
@@ -194,7 +200,7 @@ SuperTags.addEventListener("tag", function(data) {
 })
 ```
 
-The data parameter has the following properties and possible values: 
+The data parameter has the following properties and possible values:
 
 ```
 data: {
@@ -218,17 +224,17 @@ Textbox Example:
 ```html
 //the template name must match the ``inputTemplate`` property in the settings provided
 <template name="templateName">
-  //settings are provide back to the template by SuperTags 
+  //settings are provide back to the template by SuperTags
   {{> inputAutocomplete settings=settings id="anyId" class="anyClasses"}}
 </template>
 ```
 
-Textarea Example: 
+Textarea Example:
 
 ```html
 //the template name must match the ``inputTemplate`` property in the settings provided
 <template name="templateName">
-  //settings are provide back to the template by SuperTags 
+  //settings are provide back to the template by SuperTags
   {{#textareaAutocomplete settings=settings id="anyId"}}{{/textareaAutocomplete}}
 </template>
 ```
@@ -249,7 +255,7 @@ Example:
 </template>
 ```
 
-### DOM Tags 
+### DOM Tags
 
 In some cases, it is helpful to add all the tags for an object to the DOM. SuperTags makes this easy with a convenient helper.
 
@@ -274,13 +280,13 @@ Example of Results:
 </template>
 ```
 
-Each attribute value includes the original token for easy parsing. 
+Each attribute value includes the original token for easy parsing.
 
 ## Bonus
 
 ### Handling spaces in tags
 
-Typically tags do not support spaces, but this makes things like mentions a little tricky. SuperTags allows the use of spaces provided the appropriate syntax. 
+Typically tags do not support spaces, but this makes things like mentions a little tricky. SuperTags allows the use of spaces provided the appropriate syntax.
 
 ```js
   var spacedTags = "This is a #sample provided by @[Bob Smith]"
