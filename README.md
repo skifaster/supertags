@@ -22,7 +22,7 @@ To use the SuperTags package, the ``Activate`` method (see Usage below) must be 
 
 ```js
 var settings {
-  inputTemplate: "blazeTemplateName, //Blaze template to attach events and helpers
+  inputTemplate: "blazeTemplateName", //Blaze template to attach events and helpers
   inputControl: "divIdForTagField" //Div Id for tag input
 }
 
@@ -34,7 +34,16 @@ SuperTags has two modes for entering tags:
 
 * Tag Box - Provides an input box for users to enter in one or more tags. This is the default mode and good for collecting tags on forms, etc. The user can only enter tags in this mode.
 
-* Inline - Similar to how twitter does has tags, users can intermix text and tags in this mode. Tags must be tokenized with a symbol (e.g. #).
+* Inline - Similar to how twitter does hashtags, users can intermix text and tags in this mode. Tags must be tokenized with a symbol (e.g. #).
+
+The default Tag Mode is 'tagBox', but it can also be set in the settings obj:
+
+```js
+var settings = {
+  ...,
+  tagMode: 'tagBox' //available options are: 'tagBox' or 'inline'
+}
+```
 
 ### Tokenized Tags
 
