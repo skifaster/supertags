@@ -47,14 +47,25 @@ var settings = {
 
 ### Additional Tag Styles
 
-SuperTags makes it easy to add additional CSS classes to each tag. This allows the application to adjust the look and feel of the tags to its liking.
+SuperTags makes it easy to add additional CSS classes to each tag. This allows the application to adjust the look and feel of the tags.
 
 ```js
 var settings = {
   ...
   tagCss: {
-    additionalTagClasses: "class1 class2" //space delimited string of classes
+    additionalTagClasses: "class1 class2" //space delimited string of css classes
   }
+}
+```
+
+### Submit Keys
+
+SuperTags allows the application to adjust which key events trigger a new tag creation. By default the tab keys are 'enter' (13) and 'tab' (9). The `submitKeys` setting allows the application to override these keys.
+
+```js
+var settings = {
+  ...
+  submitKeys: [13, 9 , 32]
 }
 ```
 
