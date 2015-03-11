@@ -69,7 +69,7 @@ var settings = {
 }
 ```
 
-### Tokenized Tags (Inline Mode)
+### Tokenized Tags (Inline Mode Only)
 
 Hashtags and mentions are the most popular tokenized tags, but SuperTags allows for any number of tokenized tags. It is important to note that tokenized tags only work in `inline` mode.
 
@@ -77,7 +77,10 @@ Hashtags and mentions are the most popular tokenized tags, but SuperTags allows 
 var settings = {
   availableTags: [{
     label: "hashtag",
-    token: "#"          //token to denote a tag within text
+    token: "#",          //token to denote a tag within text
+    css: {
+      classes: "class1 class2" //space delimited string of css classes
+    }
   }, {
     label: "mention",
     token: "@"
@@ -87,15 +90,34 @@ var settings = {
 
 ### Autocomplete Settings
 
-Most tag libraries have autocomplete built in, SuperTags utilizes [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete) to allow this functionality. To use autocomplete with SuperTags, use the following settings:
+SuperTags has a builtin autocomplete feature that allows the user to pick from a pre-determined list of tags. Simply provide an array or collection in the settings object (see below) and it will be presented to the user on input. For collections, additional filters can be provided, which is especially useful in the case of `inline` mode.
+
+In `tagBox` mode the user can choose from a single list. In `inline` mode, the user can choose from one list per tokenized tag.
+
+The settings object can accept a global `autocomplete` key on settings object or an `autocomplete` key for each tokenized tag.
+
+Global autocomplete example:
 
 ```js
 var settings = {
-  inputTemplate: "templateName",  //the name of the template that will be interacted with (e.g typed in)
+  autocomplete: {
+    data: collectionName, //accepts an array or collection name
+    displayField: "fieldName", //field display in autocomplete list (required for collections)
+    lookupField: "fieldName", //field to filter on as typing (required for collections)
+    itemTemplate: itemTemplateName, //(optional) customize how each item is displayed
+    limit: 5, //(optional) limit the number of items displayed at one time
+    filter: {key: 'value'}  //(optional) provides additional filtering for collections
+  }
+}
+```
+
+```js
+var settings = {
+  ...
   availableTags: [{
     label: "hashtag",
     token: "#",
-    autocomplete: [  //see mizzao:autocomplete for full docs
+    autocomplete: [
       collection: collectionName, //name of the collection to pull from for autocomplete
       field: "fieldName",         //name of the field from the collection (above) to use
       template: "templateName"   //original docs take a Template, SuperTags needs a string name for the template
