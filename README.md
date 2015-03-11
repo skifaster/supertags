@@ -275,31 +275,6 @@ data: {
 
 SuperTags utilizes the mizzao:autocomplete template helpers and also provides some additional helpers to make it easier to deal with tags.
 
-### Autocomplete
-
-Autocomplete can be enabled on a textbox or a textarea. See the Autocomplete Settings section above for all the mandatory settings required.
-
-Textbox Example:
-
-```html
-//the template name must match the ``inputTemplate`` property in the settings provided
-<template name="templateName">
-  //settings are provide back to the template by SuperTags
-  {{> inputAutocomplete settings=settings id="anyId" class="anyClasses"}}
-</template>
-```
-
-Textarea Example:
-
-```html
-//the template name must match the ``inputTemplate`` property in the settings provided
-<template name="templateName">
-  //settings are provide back to the template by SuperTags
-  {{#textareaAutocomplete settings=settings id="anyId"}}{{/textareaAutocomplete}}
-</template>
-```
-
-The full documentation can be found at [mizzao:autocomplete](https://atmospherejs.com/mizzao/autocomplete)
 
 ### Tag Highlighting
 
@@ -341,20 +316,6 @@ Example of Results:
 ```
 
 Each attribute value includes the original token for easy parsing.
-
-## Bonus
-
-### Handling spaces in tags
-
-Typically tags do not support spaces, but this makes things like mentions a little tricky. SuperTags allows the use of spaces provided the appropriate syntax.
-
-```js
-  var spacedTags = "This is a #sample provided by @[Bob Smith]"
-```
-
-In the example above 'Bob Smith' will now be available as a tag.
-
-Note: If autocomplete is enabled, it will tag items with existing tags automatically, no special syntax is needed. New tags still need to use the syntax above, until they are stored in the autocomplete collection.
 
 ## TODO
 
