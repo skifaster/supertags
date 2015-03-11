@@ -111,17 +111,22 @@ var settings = {
 }
 ```
 
+Autocomplete for tokenized tags:
+
 ```js
 var settings = {
   ...
   availableTags: [{
     label: "hashtag",
     token: "#",
-    autocomplete: [
-      collection: collectionName, //name of the collection to pull from for autocomplete
-      field: "fieldName",         //name of the field from the collection (above) to use
-      template: "templateName"   //original docs take a Template, SuperTags needs a string name for the template
-    ]
+    autocomplete: {
+      data: collectionName, //accepts an array or collection name
+      displayField: "fieldName", //field display in autocomplete list (required for collections)
+      lookupField: "fieldName", //field to filter on as typing (required for collections)
+      itemTemplate: itemTemplateName, //(optional) customize how each item is displayed
+      limit: 5, //(optional) limit the number of items displayed at one time
+      filter: {key: 'value'}  //(optional) provides additional filtering for collections
+    }
   }]
 }
 ```
