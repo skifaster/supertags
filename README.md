@@ -36,12 +36,25 @@ SuperTags has two modes for entering tags:
 
 * Inline - Similar to how twitter does hashtags, users can intermix text and tags in this mode. Tags must be tokenized with a symbol (e.g. #).
 
-The default Tag Mode is 'tagBox', but it can also be set in the settings obj:
+The default Tag Mode is 'tagBox', but it can also be set in the settings object:
 
 ```js
 var settings = {
-  ...,
+  ...
   tagMode: 'tagBox' //available options are: 'tagBox' or 'inline'
+}
+```
+
+### Additional Tag Styles
+
+SuperTags makes it easy to add additional CSS classes to each tag. This allows the application to adjust the look and feel of the tags to its liking.
+
+```js
+var settings = {
+  ...
+  tagCss: {
+    additionalTagClasses: "class1 class2" //add each additional style as a space delimited string
+  }
 }
 ```
 
