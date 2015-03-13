@@ -16,16 +16,73 @@ SuperTags allows for easy tagging of in memory objects and mongo documents. Some
 ## Current Version
 **v0.2.0**
 
-## Setup and Configuration
+## Quick Start
 
-To use the SuperTags package, the ``Activate`` method (see Usage below) must be called with a settings object. The basic settings of the SuperTags library are below:
+SuperTags comes with various options and configurations for a few tagging scenarios. The default options make it easy to get started with a typical tag box for forms, etc.
+
+### Tag Box Mode
+
+```js
+var settings = {
+  inputTemplate: 'blazeTemplateName', //Blaze template to attach events and helpers
+  inputControl: 'divIdForInput' //Div Id for tag input
+}
+var sTags = new SuperTags.Activate(settings);
+```
+
+```html
+<template name="blazeTemplateName">
+  <div id="divIdForInput" style="width:100%;height:100px;border:1px solid black;"></div>
+</template>
+```
+
+The user will be able to add tags directly to the `divIdForInput` div. The app can easily access the tags added by the user:
+
+```js
+var userTags = sTags.getTags();
+```
+
+This will result in an array of tags added in to the `divIdForInput` div.
+
+### Inline Mode
+
+```js
+var settings = {
+  inputTemplate: 'blazeTemplateName', //Blaze template to attach events and helpers
+  inputControl: 'divIdForInput', //Div Id for tag input
+  tagMode: 'inline',
+  availableTags: [{
+    label: 'hashtags',
+    token: '#'
+  }]
+}
+var sTags = new SuperTags.Activate(settings);
+```
+
+The user can now add tags directly in the text using hashtags. SuperTags supports any number of lables and tokens. To get the tags from the field:
+
+```js
+var userTags = sTags.getTags()
+```
+
+This will result in an array for each set of labels provided in the `availbleTags` object array.
+
+```js
+  var result = {
+    hastags: ['tag1','tag2'],
+    originalText: "#tag1 #tag2"
+  }
+```
+
+## Additional Setup and Configuration
+
+To use the SuperTags package, the `Activate` method (see Usage below) must be called with a settings object. The basic settings of the SuperTags library are below:
 
 ```js
 var settings {
   inputTemplate: "blazeTemplateName", //Blaze template to attach events and helpers
   inputControl: "divIdForTagField" //Div Id for tag input
 }
-
 ```
 
 ### Tag Modes
@@ -148,7 +205,7 @@ var settings = {
 }
 ```
 
-## Usage
+## Additional Usage
 
 To use SuperTags, call the ``Activate`` function with the appropriate settings:
 

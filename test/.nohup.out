@@ -5,18 +5,18 @@
 => Started proxy.
 => A patch (Meteor 1.0.3.2) for your current release is available!
    Update this project now with 'meteor update --patch'.
-[34mI20150311-15:47:21.208(-7)? [39m** You've set up some data subscriptions with Meteor.publish(), but
-[34mI20150311-15:47:21.209(-7)? [39m** you still have autopublish turned on. Because autopublish is still
-[34mI20150311-15:47:21.209(-7)? [39m** on, your Meteor.publish() calls won't have much effect. All data
-[34mI20150311-15:47:21.209(-7)? [39m** will still be sent to all clients.
-[34mI20150311-15:47:21.209(-7)? [39m**
-[34mI20150311-15:47:21.209(-7)? [39m** Turn off autopublish by removing the autopublish package:
-[34mI20150311-15:47:21.209(-7)? [39m**
-[34mI20150311-15:47:21.209(-7)? [39m**   $ meteor remove autopublish
-[34mI20150311-15:47:21.209(-7)? [39m**
-[34mI20150311-15:47:21.210(-7)? [39m** .. and make sure you have Meteor.publish() and Meteor.subscribe() calls
-[34mI20150311-15:47:21.210(-7)? [39m** for each collection that you want clients to see.
-[34mI20150311-15:47:21.210(-7)? [39m
+[34mI20150313-12:28:03.845(-7)? [39m** You've set up some data subscriptions with Meteor.publish(), but
+[34mI20150313-12:28:03.846(-7)? [39m** you still have autopublish turned on. Because autopublish is still
+[34mI20150313-12:28:03.846(-7)? [39m** on, your Meteor.publish() calls won't have much effect. All data
+[34mI20150313-12:28:03.846(-7)? [39m** will still be sent to all clients.
+[34mI20150313-12:28:03.846(-7)? [39m**
+[34mI20150313-12:28:03.846(-7)? [39m** Turn off autopublish by removing the autopublish package:
+[34mI20150313-12:28:03.846(-7)? [39m**
+[34mI20150313-12:28:03.846(-7)? [39m**   $ meteor remove autopublish
+[34mI20150313-12:28:03.847(-7)? [39m**
+[34mI20150313-12:28:03.847(-7)? [39m** .. and make sure you have Meteor.publish() and Meteor.subscribe() calls
+[34mI20150313-12:28:03.847(-7)? [39m** for each collection that you want clients to see.
+[34mI20150313-12:28:03.847(-7)? [39m
 => Started your app.
 
 => App running at: http://127.0.0.1:3000
