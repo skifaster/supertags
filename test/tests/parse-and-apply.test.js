@@ -57,6 +57,27 @@ describe("Parse and tag objects", function() {
       evalResults.hashtags[0].should.equal("sample");
     })
   });
+  it("should properly parse tags from text at any language", function() {
+    var tags = [
+        'sample',
+        'пример',
+        'örnək',
+        'mostër',
+        'عينة',
+        'ўзор',
+        'নমুনা'
+    ];
+    casper.then(function(){
+      var evalResults = casper.evaluate(function(){
+        return superTags.parseAllTags("this is my " + tags.join(' #') +" text");;
+      });
+      evalResults.originalText.should.equal( "this is my " + tags.join(' #') +" text" );
+      evalResults.modifiedText.should.equal( "this is my " + tags.join(' #') +" text" );
+      for(var i= 0, l= tags.length;i<l;i++){
+        evalResults.hashtags[i].should.equal(tags[i]);
+      }
+    })
+  });
   it("should properly parse a tag from object - parseAllTagsFromObject", function() {
     casper.then(function() {
       var evalResults = casper.evaluate(function() {
