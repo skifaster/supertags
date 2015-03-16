@@ -69,7 +69,8 @@ describe("Parse and tag objects", function() {
     ];
     casper.then(function(){
       var evalResults = casper.evaluate(function(){
-        return superTags.parseAllTags("this is my " + tags.join(' #') +" text");;
+        var parsedTags = superTags.parseAllTags("this is my " + tags.join(' #') +" text");
+        return parsedTags;
       });
       evalResults.originalText.should.equal( "this is my " + tags.join(' #') +" text" );
       evalResults.modifiedText.should.equal( "this is my " + tags.join(' #') +" text" );
