@@ -72,6 +72,7 @@ describe("Parse and tag objects", function() {
         var parsedTags = superTags.parseAllTags("this is my " + tags.join(' #') +" text");
         return parsedTags;
       });
+      this.log(evalResults);
       evalResults.originalText.should.equal( "this is my " + tags.join(' #') +" text" );
       evalResults.modifiedText.should.equal( "this is my " + tags.join(' #') +" text" );
       for(var i= 0, l= tags.length;i<l;i++){
