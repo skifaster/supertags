@@ -63,7 +63,7 @@ describe("Parse and tag objects", function() {
         'sample',
         'пример',
         'örnək',
-        'mostër',
+
         'عينة',
         'ўзор',
         'নমুনা'
