@@ -9,6 +9,7 @@ describe("Parse and tag objects", function() {
 	before(function() {
 		casper.start(url);
 		casper.on("remote.message", function(message) {
+
 		})
 	});
 	it("should have a global namespace and base classes", function() {
@@ -68,10 +69,10 @@ describe("Parse and tag objects", function() {
         'নমুনা'
     ];
     casper.then(function(){
-      var evalResults = casper.evaluate(function(){
+      var evalResults = casper.evaluate(function(tags){
         var parsedTags = superTags.parseAllTags("this is my " + tags.join(' #') +" text");
         return parsedTags;
-      });
+      }, tags);
 
       evalResults.modifiedText.should.equal( "this is my " + tags.join(' #') +" text" );
       for(var i= 0, l= tags.length;i<l;i++){
